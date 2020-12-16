@@ -31,8 +31,7 @@ http.createServer(function (request, response){
     //server answer goes to url answer
 }).listen(3000, "127.0.0.1", function(){
     console.log("Сервер начал прослушивание запросов, порт 3000"
-                + greeting.date
-                +`Hello ${greeting1.name}`
+                +` Hello ${greeting1.name}`
     );
     //params to listen
     //console log goes down
@@ -47,3 +46,17 @@ welcome.getMorningMessage();
 welcome.getEveningMessage();
 //Можно обращаться к узлам по имени директории, если осущетслен ее импорт
 //в данном случае в дир welcome main файл является index.js, в нем и "стягивается" функционал
+
+
+global.name = "Vladimir";
+
+global.console.log(date);
+console.log(greeting.getMessage());
+//Здесь устанавливаем глобальную переменную name,
+// которую мы получаем в модуле greeting.js.
+// И также выводим на консоль глобальную
+// переменную date. Причем все глобальные
+// функции и объекты, например, console,
+// также доступны внутри global, поэтому
+// мы можем написать и global.console.log(),
+// и просто console.log().

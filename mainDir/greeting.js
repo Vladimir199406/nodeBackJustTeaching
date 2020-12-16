@@ -4,7 +4,7 @@ let currentDate = new Date();
 // Обьект Дата содержит число милисекунд
 // прошедших с 1 января 1970 г. UTC
 
-module.exports.date = currentDate;
+global.date = currentDate;
 //теперь можно использовать переменную дата вне модуля
 
 
@@ -16,12 +16,12 @@ module.exports.getMessage = function(name){
     //Метод getHours() возвращает часы
     // указанной даты по местному времени.
     if(hour > 16){
-        return "Good evening, " + name;
+        return "Good evening, " + global.name;
     }
     else if(hour > 10){
-        return "Good day, " + name;
+        return "Good day, " + global.name;
     }
     else{
-        return "Good morning, " + name;
+        return "Good morning, " + global.name;
     }
 }
