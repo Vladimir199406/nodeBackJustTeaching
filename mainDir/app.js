@@ -7,6 +7,9 @@ const greeting = require("./greeting");
 //import module with date and greeting
 const User = require("./user");
 //import module with user constructor
+const welcome = require("./welcome");
+//import module block "welcome"
+
 let greeting1 = require("./greetingName");
 
 
@@ -21,6 +24,7 @@ http.createServer(function (request, response){
         + greeting.getMessage(userName)
         +"\r\n"
         +vladimir.sayHi()
+        +"\r\n"
     );
 
 
@@ -38,3 +42,8 @@ let greeting2 = require("./greetingName");
 greeting2.name = "Bob";
 console.log(`Hello ${greeting2.name}`);
 console.log(`Hello ${greeting1.name}`);
+
+welcome.getMorningMessage();
+welcome.getEveningMessage();
+//Можно обращаться к узлам по имени директории, если осущетслен ее импорт
+//в данном случае в дир welcome main файл является index.js, в нем и "стягивается" функционал
